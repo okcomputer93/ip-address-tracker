@@ -1,0 +1,25 @@
+@use '../abstract/typography';
+@use '../abstract/variables';
+
+.header {
+    flex: 0 0 auto;
+    background: url(../images/pattern-bg.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding-bottom: 15rem;
+    // height: 40vh;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &__title {
+        color: #fff;
+        font-size: 3rem;
+        font-weight: 500;
+        letter-spacing: 0.1rem;
+        padding: 2rem 0;
+        text-align: center;
+    }
+}

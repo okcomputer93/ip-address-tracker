@@ -1,0 +1,39 @@
+@use '../abstract/variables';
+
+.info {
+    transform: translateY(-50%);
+    background-color: #fff;
+    display: flex;
+    position: relative;
+    padding: 4rem;
+    border-radius: 15px;
+
+    &__box {
+        flex: 1;
+        text-align: left;
+        padding-right: 5rem;
+        margin-bottom: 2rem;
+
+        &:not(:first-child) {
+            margin-left: 3rem;
+        }
+
+        &:not(:last-child) {
+            border-right: 1px solid rgba(variables.$dark-gray, 0.4);
+        }
+    }
+
+    &__title {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        color: variables.$dark-gray;
+        font-weight: 700;
+        padding-bottom: 1rem;
+        letter-spacing: 0.2rem;
+    }
+
+    &__content {
+        font-size: 3rem;
+        font-weight: 700;
+    }
+}

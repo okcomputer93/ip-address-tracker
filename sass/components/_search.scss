@@ -1,0 +1,41 @@
+@use '../abstract/variables';
+
+.search {
+    &__box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__input {
+        padding: 1.2rem 2rem;
+        width: 50rem;
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+        font-size: 1.8rem;
+        font-size: 1.6rem;
+        border: none;
+
+        &::placeholder {
+            color: variables.$dark-gray;
+        }
+
+        &:focus {
+            color: variables.$darker-gray;
+        }
+    }
+
+    &__button {
+        border: none;
+        padding: 1.5rem 2rem;
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+        display: inline;
+        background-color: variables.$darker-gray;
+        cursor: pointer;
+
+        &:hover,
+        &:active {
+            background-color: lighten(variables.$darker-gray, 5%);
+        }
+    }
+}
