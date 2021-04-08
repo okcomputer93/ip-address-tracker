@@ -12,6 +12,20 @@
         />
 
         <link rel="stylesheet" href="css/style.css" />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+            integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+            crossorigin=""
+        />
+        <script
+            defer
+            src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""
+        ></script>
+
+        <script defer src="js/app.js"></script>
 
         <title>Frontend Mentor | IP Address Tracker</title>
     </head>
@@ -19,7 +33,7 @@
         <div class="container">
             <header class="header">
                 <h2 class="header__title">IP Address Tracker</h2>
-                <form class="search">
+                <form class="search" id="search">
                     <div class="search__box">
                         <input
                             class="search__input"
@@ -54,20 +68,7 @@
                         <h2 class="info__content">SpaceX Starlink</h2>
                     </div>
                 </div>
-                <div class="attribution">
-                    Challenge by
-                    <a
-                        class="attribution__link"
-                        href="https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0"
-                        target="_blank"
-                        >Frontend Mentor</a
-                    >. Coded by
-                    <a
-                        class="attribution__link"
-                        href="https://github.com/okcomputer93"
-                        >okcomputer</a
-                    >.
-                </div>
+                <div class="map__content" id="map"></div>
             </section>
         </div>
     </body>

@@ -1,10 +1,11 @@
 @use '../abstract/variables';
 
 .info {
+    z-index: 10;
     transform: translateY(-50%);
     background-color: #fff;
     display: flex;
-    position: relative;
+    position: fixed;
     padding: 4rem;
     border-radius: 15px;
 
