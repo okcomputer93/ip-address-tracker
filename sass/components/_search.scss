@@ -22,20 +22,65 @@
         &:focus {
             color: variables.$darker-gray;
         }
+
+        &--error {
+            animation: shake 0.2s ease-in-out 0s 2;
+        }
     }
 
     &__button {
         border: none;
-        padding: 1.5rem 2rem;
+        width: 51px;
+        height: 43px;
         border-top-right-radius: 12px;
         border-bottom-right-radius: 12px;
         display: inline;
         background-color: variables.$darker-gray;
         cursor: pointer;
+        transition: transform 0.5s;
 
         &:hover,
         &:active {
             background-color: lighten(variables.$darker-gray, 5%);
+            transform: scale(1.05);
         }
+
+        &:hover > .search__icon,
+        &:active > .search__icon {
+            transform: rotate(0);
+        }
+    }
+
+    &__error {
+        display: inline-block;
+        position: relative;
+        top: 15%;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #ef9a9a;
+    }
+
+    &__icon {
+        width: 11px;
+        height: 14px;
+        vertical-align: middle;
+        display: inline-block;
+        transform: rotate(180deg);
+        transition: transform 0.5s;
+    }
+}
+
+@keyframes shake {
+    0% {
+        margin-left: 0rem;
+    }
+    25% {
+        margin-left: 0.5rem;
+    }
+    75% {
+        margin-left: -0.5rem;
+    }
+    100% {
+        margin-left: 0rem;
     }
 }

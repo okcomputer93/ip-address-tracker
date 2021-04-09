@@ -43,9 +43,28 @@
                             placeholder="Search for any IP address or domain"
                         />
                         <button class="search__button" type="submit">
-                            <img src="images/icon-arrow.svg" alt="Arrow Icon" />
+                            <img
+                                class="search__icon"
+                                src="images/icon-arrow.svg"
+                                alt="Arrow Icon"
+                            />
                         </button>
                     </div>
+                    <!-- <p class="search__error">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="search__icon"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                                clip-rule="evenodd"
+                            />
+                        </svg>
+                        Error text goes here
+                    </p> -->
                 </form>
             </header>
 
@@ -53,19 +72,27 @@
                 <div class="info">
                     <div class="info__box">
                         <p class="info__title">Ip Address</p>
-                        <h2 class="info__content">192.168.0.1</h2>
+                        <h2 class="info__content info__content--ip">
+                            192.168.0.1
+                        </h2>
                     </div>
                     <div class="info__box">
                         <p class="info__title">Location</p>
-                        <h2 class="info__content">Brooklyn, NY 10001</h2>
+                        <h2 class="info__content info__content--location">
+                            Brooklyn, NY 10001
+                        </h2>
                     </div>
                     <div class="info__box">
                         <p class="info__title">Timezone</p>
-                        <h2 class="info__content">UTC -05:00</h2>
+                        <h2 class="info__content info__content--timezone">
+                            UTC -05:00
+                        </h2>
                     </div>
                     <div class="info__box">
                         <p class="info__title">ISP</p>
-                        <h2 class="info__content">SpaceX Starlink</h2>
+                        <h2 class="info__content info__content--isp">
+                            SpaceX Starlink
+                        </h2>
                     </div>
                 </div>
                 <div class="map__content" id="map"></div>
