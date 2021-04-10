@@ -25,7 +25,7 @@ class SearchView {
         <p class="search__error">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="search__icon"
+                class="search__icon-error"
                 viewBox="0 0 20 20"
                 fill="currentColor"
             >
