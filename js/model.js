@@ -3,14 +3,17 @@ export const state = {
     queries: [],
 };
 
-export const searchIp = async (ip) => {
+export const search = async (query, isDomain) => {
+    const searchQuery = isDomain ? `domain=${query}` : `ipAddress=${query}`;
     try {
         const response = await fetch(
-            `https://geo.ipify.org/api/v1?apiKey=at_0z40R5hMgN7ejpYAMajXJhL1bp4Uo&ipAddress=${ip}`
+            `https://geo.ipify.org/api/v1?apiKey=at_0z40R5hMgN7ejpYAMajXJhL1bp4Uo&${searchQuery}`
         );
         const data = await response.json();
+        if (data.code === 400)
+            throw new Error("No results found for this search.");
         if (!response.ok)
-            throw new Error("There was an error, please try again later");
+            throw new Error("There was an error, please try again later.");
         createResultObject(data);
     } catch (error) {
         console.error("Uh oh something went very wrong :(", error);

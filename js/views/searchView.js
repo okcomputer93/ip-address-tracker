@@ -1,13 +1,12 @@
-class SearchIpView {
+class SearchView {
     _parentElement = document.querySelector("#search");
     _errorClassList = "search__input--error";
 
     _searchInput = document.querySelector(".search__input");
     _searchBox = document.querySelector(".search__box");
 
-    getQueryIp() {
+    getQuery() {
         const query = this._searchInput.value;
-        this._clearInput();
         return query;
     }
 
@@ -49,4 +48,4 @@ class SearchIpView {
     }
 }
 
-export default new SearchIpView();
+export default new SearchView();
