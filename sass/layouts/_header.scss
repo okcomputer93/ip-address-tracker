@@ -14,6 +14,10 @@
     align-items: center;
     flex-direction: column;
 
+    @media only screen and (max-width: variables.$bp-small) {
+        height: 55rem;
+    }
+
     &__title {
         color: #fff;
         font-size: 3rem;
@@ -21,5 +25,10 @@
         letter-spacing: 0.1rem;
         padding: 2rem 0;
         text-align: center;
+
+        @media only screen and (max-width: variables.$bp-small) {
+            padding: 6rem 0 3rem 0;
+            font-size: 4rem;
+        }
     }
 }

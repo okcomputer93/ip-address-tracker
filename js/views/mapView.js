@@ -12,10 +12,14 @@ class mapView {
                 id: "mapbox/streets-v11",
                 tileSize: 512,
                 zoomOffset: -1,
+                zoom: {
+                    position: "bottomright",
+                },
                 accessToken:
                     "pk.eyJ1Ijoib2tjb21wdXRlciIsImEiOiJja244ZzhjemMwOTVqMm9waWdoY3QwNGwwIn0.3prYNoEeSweSCDKehE9Sig",
             }
         ).addTo(this._map);
+        this._map.zoomControl.setPosition("bottomright");
     }
 
     updateMarker(lat, lng) {

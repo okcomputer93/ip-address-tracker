@@ -11,6 +11,16 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 43.75%;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  html {
+    font-size: 31.25%;
+  }
+}
 
 body {
   font-family: "Rubik", sans-serif;
@@ -35,9 +45,15 @@ body {
   width: 50rem;
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
-  font-size: 1.8rem;
   font-size: 1.6rem;
   border: none;
+}
+@media only screen and (max-width: 37.5em) {
+  .search__input {
+    padding: 2rem;
+    width: 54rem;
+    font-size: 3rem;
+  }
 }
 .search__input::placeholder {
   color: #969696;
@@ -50,14 +66,20 @@ body {
 }
 .search__button {
   border: none;
-  width: 51px;
-  height: 43px;
+  width: 5rem;
+  height: 4.4rem;
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
   display: inline;
   background-color: #2b2b2b;
   cursor: pointer;
   transition: transform 0.5s;
+}
+@media only screen and (max-width: 37.5em) {
+  .search__button {
+    height: 7.6rem;
+    width: 7rem;
+  }
 }
 .search__button:hover, .search__button:active {
   background-color: #383838;
@@ -67,6 +89,7 @@ body {
   transform: rotate(0);
 }
 .search__error {
+  margin-top: 0.4rem;
   display: inline-block;
   position: relative;
   top: 15%;
@@ -74,17 +97,30 @@ body {
   font-weight: 700;
   color: #f44336;
 }
+@media only screen and (max-width: 37.5em) {
+  .search__error {
+    font-size: 3rem;
+    right: -50%;
+    transform: translateX(-50%);
+  }
+}
 .search__icon-error {
   width: 2.5rem;
   vertical-align: middle;
 }
 .search__icon {
-  width: 11px;
-  height: 14px;
+  width: 1.1rem;
+  height: 1.4rem;
   vertical-align: middle;
   display: inline-block;
   transform: rotate(180deg);
   transition: transform 0.5s;
+}
+@media only screen and (max-width: 37.5em) {
+  .search__icon {
+    width: 2rem;
+    height: 2rem;
+  }
 }
 
 @keyframes shake {
@@ -106,10 +142,29 @@ body {
   transform: translateY(-50%);
   background-color: #fff;
   display: flex;
+  justify-content: center;
   position: fixed;
   padding: 4rem;
   border-radius: 15px;
   width: 130rem;
+}
+@media only screen and (max-width: 81.25em) {
+  .info {
+    width: 90rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .info {
+    width: 85rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .info {
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    padding: 3.5rem;
+  }
 }
 .info__box {
   flex: 1;
@@ -117,11 +172,32 @@ body {
   padding-right: 5rem;
   margin-bottom: 2rem;
 }
+@media only screen and (max-width: 56.25em) {
+  .info__box {
+    padding-right: 2rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .info__box {
+    padding-right: 0;
+  }
+}
 .info__box:not(:first-child) {
   margin-left: 3rem;
 }
+@media only screen and (max-width: 37.5em) {
+  .info__box:not(:first-child) {
+    margin-left: 0;
+  }
+}
 .info__box:not(:last-child) {
   border-right: 1px solid rgba(150, 150, 150, 0.4);
+}
+@media only screen and (max-width: 37.5em) {
+  .info__box:not(:last-child) {
+    border-right: none;
+    padding-bottom: 1.5rem;
+  }
 }
 .info__title {
   font-size: 1.2rem;
@@ -131,9 +207,22 @@ body {
   padding-bottom: 1rem;
   letter-spacing: 0.2rem;
 }
+@media only screen and (max-width: 37.5em) {
+  .info__title {
+    text-align: center;
+    font-size: 2rem;
+  }
+}
 .info__content {
   font-size: 3rem;
   font-weight: 700;
+}
+@media only screen and (max-width: 37.5em) {
+  .info__content {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 500;
+  }
 }
 
 .attribution {
@@ -161,6 +250,11 @@ body {
   align-items: center;
   flex-direction: column;
 }
+@media only screen and (max-width: 37.5em) {
+  .header {
+    height: 55rem;
+  }
+}
 .header__title {
   color: #fff;
   font-size: 3rem;
@@ -168,6 +262,12 @@ body {
   letter-spacing: 0.1rem;
   padding: 2rem 0;
   text-align: center;
+}
+@media only screen and (max-width: 37.5em) {
+  .header__title {
+    padding: 6rem 0 3rem 0;
+    font-size: 4rem;
+  }
 }
 
 .map {
