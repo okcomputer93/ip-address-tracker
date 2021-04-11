@@ -19,10 +19,17 @@ const controlSearch = async (event) => {
             "Please provide a valid IPv4, IPv6 address or domain."
         );
 
-    searchAndRender(searchQuery, validation.isDomain);
+    searchAndRender({
+        searchQuery,
+        isDomain: validation.isDomain,
+    });
 };
 
-const searchAndRender = async (searchQuery, isDomain = false) => {
+const searchAndRender = async ({
+    isMyIp = false,
+    searchQuery,
+    isDomain = false,
+}) => {
     try {
         await model.search(searchQuery, isDomain);
         if (!model.state.ipInfo)
@@ -33,6 +40,14 @@ const searchAndRender = async (searchQuery, isDomain = false) => {
     infoView.renderSearch(model.state.ipInfo);
     const { lat, lng } = model.state.ipInfo.location;
     mapView.updateMarker(lat, lng);
+    modifyQueryString(model.state.ipInfo.ip, isMyIp);
+};
+
+const modifyQueryString = (newQueryString, isMyIp) => {
+    if (history.pushState && !isMyIp) {
+        const newurl = `${window.location.protocol}//${window.location.host}${window.location.pathname}?search=${newQueryString}`;
+        window.history.pushState({ path: newurl }, "", newurl);
+    }
 };
 
 const validateSearchQuery = (searchQuery) => {
@@ -51,10 +66,26 @@ const validateSearchQuery = (searchQuery) => {
     };
 };
 
+const handleFirstSearch = () => {
+    // Render my IP and location
+    // Don't add to query string my ip!
+    let search = new URLSearchParams(window.location.search).getAll(
+        "search"
+    )[0];
+    let isMyIp = false;
+    if (!search) {
+        isMyIp = true;
+        search = "";
+    }
+    searchAndRender({
+        isMyIp,
+        searchQuery: search,
+    });
+};
+
 const init = () => {
     searchView.addRenderHandler(controlSearch);
-    // Render my IP and location
-    searchAndRender("");
+    handleFirstSearch();
 };
 
 init();
